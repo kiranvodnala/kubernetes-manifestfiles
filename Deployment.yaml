@@ -1,3 +1,5 @@
+>>> sudo nano deploy.yaml  <<<
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,3 +24,9 @@ spec:
         image: nginx
         ports:
         - containerPort: 80
+
+
+kubectl apply -f deploy.yaml
+kubectl get deploy
+kubectl get rs
+kubectl get pods
