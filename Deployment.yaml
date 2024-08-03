@@ -1,23 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project2-deployment
+  name: mydeployment
   labels:
-    app: project2
+    app: frontend
 spec:
 - strategy:
   - type: Rolling Update
   replicas: 3
   selector:
     matchLabels:
-      app: project2
+      app: frontend
   template:
     metadata:
+      name: mypod
       labels:
-        app: project2
+        app: frontend
     spec:
       containers:
-      - name: project2
-        image: kiranvodnala/project2 image
+      - name: my container
+        image: nginx
         ports:
         - containerPort: 80
